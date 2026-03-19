@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix DEX Screener Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>DEX Screener</h1>
+        <p>Decentralized exchange screener with trading volume, transactions, and real-time data. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default -->
+    <div class="widget-section">
+        <div class="widget-label">Default — Overview</div>
+        <div class="widget-frame">
+            <vunelix-dex-screener></vunelix-dex-screener>
+        </div>
+    </div>
+
+    <!-- 2. Trading Volume Tab, Emerald theme -->
+    <div class="widget-section">
+        <div class="widget-label">Trading Volume — Sorted by Transactions</div>
+        <div class="widget-frame">
+            <vunelix-dex-screener
+                data-default-preset="trading"
+                data-per-page="50"
+                data-default-sort="perf.txs_count_24h_desc"
+                data-default-period="1d"
+                data-animation-mode="full"
+                data-animation-duration="1500"
+                data-enable-storage="true"
+                data-positive-color="#059669,#34d399"
+                data-negative-color="#e11d48,#fb7185"
+                data-bg-color="#ecfdf5,#0a1a14"
+                data-text-color="#064e3b,#a7f3d0"
+                data-text-secondary-color="#10b981,#6ee7b7"
+                data-border-color="#a7f3d0,#1a3a24">
+            </vunelix-dex-screener>
+        </div>
+    </div>
+
+    <!-- 3. Custom Tabs, Purple theme -->
+    <div class="widget-section">
+        <div class="widget-label">Custom Tabs</div>
+        <div class="widget-frame">
+            <vunelix-dex-screener
+                data-custom-presets='{"Liquidity":["price","change-percent","total-liquidity","trading-volume-24h"],"Transactions":["price","txs-count-24h","buyers-24h","sellers-24h"]}'
+                data-enable-filter="false"
+                data-enable-fav="false"
+                data-enable-color-groups="false"
+                data-show-description="false"
+                data-animation-mode="flash"
+                data-animation-duration="2000"
+                data-positive-color="#7c3aed,#a78bfa"
+                data-negative-color="#d97706,#fbbf24"
+                data-bg-color="#faf5ff,#110e1a"
+                data-text-color="#4c1d95,#e9d5ff"
+                data-text-secondary-color="#7c3aed,#a78bfa"
+                data-border-color="#ddd6fe,#3b2d5e">
+            </vunelix-dex-screener>
+        </div>
+    </div>
+
+    <!-- 4. Minimal, Cyan theme -->
+    <div class="widget-section">
+        <div class="widget-label">Minimal — No Controls</div>
+        <div class="widget-frame">
+            <vunelix-dex-screener
+                data-enable-presets="false"
+                data-enable-period="false"
+                data-enable-search="false"
+                data-enable-settings="false"
+                data-enable-columns="false"
+                data-enable-filter="false"
+                data-enable-fav="false"
+                data-show-logo="false"
+                data-show-ticker="false"
+                data-enable-sort="false"
+                data-enable-infinite-scroll="true"
+                data-per-page="50"
+                data-animation-mode="none"
+                data-positive-color="#0891b2,#22d3ee"
+                data-negative-color="#dc2626,#f87171"
+                data-bg-color="#ecfeff,#0a1518"
+                data-text-color="#164e63,#cffafe"
+                data-text-secondary-color="#06b6d4,#67e8f9"
+                data-border-color="#a5f3fc,#1a3540">
+            </vunelix-dex-screener>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/dex-screener" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/screener/vunelix-dex-screener.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

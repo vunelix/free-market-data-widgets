@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix Ticker Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>Ticker Widget</h1>
+        <p>Static real-time ticker grid with live prices. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Inline — Mixed Assets, Custom Colors -->
+    <div class="widget-section">
+        <div class="widget-label">Inline — Mixed Assets</div>
+        <div class="widget-frame">
+            <vunelix-ticker
+                data-ui-template="inline"
+                data-symbols="BINANCE:BTCUSDT,BINANCE:SOLUSD,FX:GBPDKK,NASDAQ:AMZN,NASDAQ:NVDA"
+                data-animation-mode="full"
+                data-positive-color="#059669,#34d399"
+                data-negative-color="#dc2626,#fb7185">
+            </vunelix-ticker>
+        </div>
+    </div>
+
+    <!-- 2. Inline — Card Style -->
+    <div class="widget-section">
+        <div class="widget-label">Inline — Card Style</div>
+        <div class="widget-frame">
+            <vunelix-ticker
+                data-ui-template="inline"
+                data-card-style="bordered"
+                data-show-border="true"
+                data-card-style="card" data-show-border="false">
+            </vunelix-ticker>
+        </div>
+    </div>
+
+    <!-- 3. Ticker Block — Arabic, Custom Colors -->
+    <div class="widget-section">
+        <div class="widget-label">Ticker Block — Arabic, Custom Colors</div>
+        <div class="widget-frame">
+            <vunelix-ticker
+                data-metrics="active.c,active.ch,active.chp,active.v"
+                data-ui-template="ticker-block"
+                data-card-style="card"
+                data-lang="ar"
+                data-positive-color="#1066b7,#22c55e"
+                data-negative-color="#f0428d,#f87171">
+            </vunelix-ticker>
+        </div>
+    </div>
+
+    <!-- 4. Ticker Block — Flash Animation -->
+    <div class="widget-section">
+        <div class="widget-label">Ticker Block — Flash Animation</div>
+        <div class="widget-frame">
+            <vunelix-ticker
+                data-symbols="BINANCE:BTCUSDT,BINANCE:ETHUSDT,BINANCE:BTCUSDT.P,NASDAQ:AAPL,NASDAQ:TSLA"
+                data-ui-template="ticker-block"
+                data-enable-links="false"
+                data-animation-mode="flash"
+                data-bg-color="#f0f9ff,#0c1222"
+                data-text-color="#0c4a6e,#e0f2fe"
+                data-show-border="true"
+                data-text-secondary-color="#0369a1,#7dd3fc"
+                data-bg-secondary-color="#e0f2fe,#1e293b">
+            </vunelix-ticker>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/ticker" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/ticker/vunelix-ticker.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

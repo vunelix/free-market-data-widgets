@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix Stock Screener Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>Stock Screener</h1>
+        <p>Advanced stock screener with filters, custom tabs, and real-time data. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default — US Stocks -->
+    <div class="widget-section">
+        <div class="widget-label">Default — US Stocks</div>
+        <div class="widget-frame">
+            <vunelix-stock-screener></vunelix-stock-screener>
+        </div>
+    </div>
+
+    <!-- 2. Valuation Tab, Filters, Emerald theme -->
+    <div class="widget-section">
+        <div class="widget-label">Valuation — With Filters</div>
+        <div class="widget-frame">
+            <vunelix-stock-screener
+                data-default-preset="valuation"
+                data-per-page="50"
+                data-default-filters='{"earnings.market_cap_gt":"10000000000"}'
+                data-default-sort="earnings.market_cap_desc"
+                data-default-period="1w"
+                data-animation-mode="digits"
+                data-animation-duration="1000"
+                data-enable-storage="true"
+                data-positive-color="#059669,#34d399"
+                data-negative-color="#e11d48,#fb7185"
+                data-bg-color="#ecfdf5,#0a1a14"
+                data-text-color="#064e3b,#a7f3d0"
+                data-text-secondary-color="#10b981,#6ee7b7"
+                data-border-color="#a7f3d0,#1a3a24">
+            </vunelix-stock-screener>
+        </div>
+    </div>
+
+    <!-- 3. Custom Tabs, UK Stocks, Indigo theme -->
+    <div class="widget-section">
+        <div class="widget-label">Custom Tabs — UK Stocks</div>
+        <div class="widget-frame">
+            <vunelix-stock-screener
+                data-default-country="GB"
+                data-custom-presets='{"Price":["price","change","change-percent","volume"],"Fundamentals":["market-cap-stock","pe-ratio","eps-ttm","dividend-yield-current"]}'
+                data-enable-filter="false"
+                data-enable-fav="false"
+                data-enable-color-groups="false"
+                data-show-description="false"
+                data-animation-mode="flash"
+                data-animation-duration="2000"
+                data-positive-color="#4f46e5,#818cf8"
+                data-negative-color="#dc2626,#f87171"
+                data-bg-color="#eef2ff,#0f1120"
+                data-text-color="#312e81,#c7d2fe"
+                data-text-secondary-color="#6366f1,#a5b4fc"
+                data-border-color="#c7d2fe,#2e3460">
+            </vunelix-stock-screener>
+        </div>
+    </div>
+
+    <!-- 4. Minimal, Amber theme -->
+    <div class="widget-section">
+        <div class="widget-label">Minimal — No Controls</div>
+        <div class="widget-frame">
+            <vunelix-stock-screener
+                data-enable-presets="false"
+                data-enable-period="false"
+                data-enable-search="false"
+                data-enable-settings="false"
+                data-enable-columns="false"
+                data-enable-filter="false"
+                data-enable-fav="false"
+                data-show-logo="false"
+                data-show-ticker="false"
+                data-enable-sort="false"
+                data-enable-infinite-scroll="true"
+                data-per-page="50"
+                data-animation-mode="none"
+                data-positive-color="#b45309,#fbbf24"
+                data-negative-color="#9f1239,#fda4af"
+                data-bg-color="#fffbeb,#1a1408"
+                data-text-color="#78350f,#fde68a"
+                data-text-secondary-color="#b45309,#f59e0b"
+                data-border-color="#fde68a,#4a3820">
+            </vunelix-stock-screener>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/stock-screener" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/screener/vunelix-stock-screener.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

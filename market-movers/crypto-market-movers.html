@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix Crypto Market Movers Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>Crypto Market Movers</h1>
+        <p>Real-time top gainers and losers in crypto. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default — Clean Look -->
+    <div class="widget-section">
+        <div class="widget-label">Default — Top Gainers</div>
+        <div class="widget-frame">
+            <vunelix-crypto-market-movers></vunelix-crypto-market-movers>
+        </div>
+    </div>
+
+    <!-- 2. Losers, Badge, Bordered, Teal/Pink theme -->
+    <div class="widget-section">
+        <div class="widget-label">Top Losers — Badge Style, Borderless</div>
+        <div class="widget-frame">
+            <vunelix-crypto-market-movers
+                data-sort-by="active.chp_asc"
+                data-change-badge="true"
+                data-per-page="8"
+                data-show-currency="false"
+                data-card-style="borderless"
+                data-positive-color="#0d9488,#2dd4bf"
+                data-negative-color="#e11d48,#fb7185"
+                data-bg-color="#f0fdfa,#0a1a1a"
+                data-text-color="#134e4a,#ccfbf1"
+                data-text-secondary-color="#5eead4,#5eead4">
+            </vunelix-crypto-market-movers>
+        </div>
+    </div>
+
+    <!-- 3. Market Cap, 3 Cols, Purple/Amber theme -->
+    <div class="widget-section">
+        <div class="widget-label">Market Cap — 3 Columns</div>
+        <div class="widget-frame">
+            <vunelix-crypto-market-movers
+                data-sort-by="perf.market_cap_desc"
+                data-metrics="active.c,active.ch"
+                data-grid-cols="3"
+                data-per-page="6"
+                data-change-badge="false"
+                data-positive-color="#7c3aed,#a78bfa"
+                data-negative-color="#d97706,#fbbf24"
+                data-bg-color="#faf5ff,#110e1a"
+                data-bg-secondary-color="#f3e8ff,#1e1530"
+                data-text-color="#4c1d95,#e9d5ff"
+                data-text-secondary-color="#7c3aed,#a78bfa"
+                data-border-color="#ddd6fe,#3b2d5e">
+            </vunelix-crypto-market-movers>
+        </div>
+    </div>
+
+    <!-- 4. DeFi, Volume, No Logo, Blue ocean theme -->
+    <div class="widget-section">
+        <div class="widget-label">DeFi Only — Volume Sort, No Logo</div>
+        <div class="widget-frame">
+            <vunelix-crypto-market-movers
+                data-filters='{"perf.category_eq":"defi"}'
+                data-sort-by="perf.24h_vol_cmc_desc"
+                data-show-logo="false"
+                data-per-page="6"
+                data-card-style="bordered"
+                data-show-border="true"
+                data-positive-color="#0284c7,#38bdf8"
+                data-negative-color="#be123c,#fda4af"
+                data-bg-color="#f0f9ff,#0c1222"
+                data-bg-secondary-color="#e0f2fe,#1e293b"
+                data-text-color="#0c4a6e,#e0f2fe"
+                data-text-secondary-color="#0369a1,#7dd3fc"
+                data-border-color="#bae6fd,#1e3a5f">
+            </vunelix-crypto-market-movers>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/crypto-market-movers" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/market-movers/vunelix-crypto-market-movers.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

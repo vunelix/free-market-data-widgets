@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix Stock Market Movers Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>Stock Market Movers</h1>
+        <p>Real-time top gainers and losers in stocks. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default — US Top Gainers -->
+    <div class="widget-section">
+        <div class="widget-label">Default — US Top Gainers</div>
+        <div class="widget-frame">
+            <vunelix-stock-market-movers></vunelix-stock-market-movers>
+        </div>
+    </div>
+
+    <!-- 2. Losers, Badge, Bordered, Cyan/Red theme -->
+    <div class="widget-section">
+        <div class="widget-label">Top Losers — Badge Style, Bordered</div>
+        <div class="widget-frame">
+            <vunelix-stock-market-movers
+                data-sort-by="active.chp_asc"
+                data-change-badge="true"
+                data-card-style="bordered"
+                data-per-page="8"
+                data-positive-color="#0891b2,#22d3ee"
+                data-negative-color="#dc2626,#f87171"
+                data-bg-color="#ecfeff,#0a1518"
+                data-text-color="#164e63,#cffafe"
+                data-text-secondary-color="#06b6d4,#67e8f9">
+            </vunelix-stock-market-movers>
+        </div>
+    </div>
+
+    <!-- 3. Market Cap, 3 Cols, Forest Green theme -->
+    <div class="widget-section">
+        <div class="widget-label">Market Cap — 3 Columns</div>
+        <div class="widget-frame">
+            <vunelix-stock-market-movers
+                data-sort-by="earnings.market_cap_desc"
+                data-metrics="active.c,active.ch"
+                data-grid-cols="3"
+                data-show-currency="false"
+                data-per-page="6"
+                data-positive-color="#15803d,#4ade80"
+                data-negative-color="#b91c1c,#fca5a5"
+                data-bg-color="#f0fdf4,#0a160e"
+                data-bg-secondary-color="#dcfce7,#14261a"
+                data-text-color="#14532d,#bbf7d0"
+                data-text-secondary-color="#16a34a,#86efac"
+                data-border-color="#bbf7d0,#1a3a24">
+            </vunelix-stock-market-movers>
+        </div>
+    </div>
+
+    <!-- 4. UK Stocks, Volume, No Name, Slate/Orange theme -->
+    <div class="widget-section">
+        <div class="widget-label">UK Stocks — Volume Sort, No Name</div>
+        <div class="widget-frame">
+            <vunelix-stock-market-movers
+                data-country="GB"
+                data-sort-by="active.v_desc"
+                data-show-name="false"
+                data-per-page="8"
+                data-card-style="bordered"
+                data-show-border="true"
+                data-positive-color="#ea580c,#fb923c"
+                data-negative-color="#7c3aed,#c4b5fd"
+                data-bg-color="#fff7ed,#1a1008"
+                data-bg-secondary-color="#ffedd5,#2a1a10"
+                data-text-color="#7c2d12,#fed7aa"
+                data-text-secondary-color="#c2410c,#fdba74"
+                data-border-color="#fed7aa,#4a2c18">
+            </vunelix-stock-market-movers>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/stock-market-movers" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/market-movers/vunelix-stock-market-movers.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

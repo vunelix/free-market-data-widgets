@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix Currency Heatmap Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>Currency Heatmap</h1>
+        <p>Visual heatmap of currency pair performance. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default — Overview -->
+    <div class="widget-section">
+        <div class="widget-label">Default — Overview</div>
+        <div class="widget-frame">
+            <vunelix-currency-heatmap></vunelix-currency-heatmap>
+        </div>
+    </div>
+
+    <!-- 2. Major Pairs, Time Period Selector, Emerald theme -->
+    <div class="widget-section">
+        <div class="widget-label">Major Pairs — Time Period Selector</div>
+        <div class="widget-frame">
+            <vunelix-currency-heatmap
+                data-preset="major"
+                data-show-time-period="true"
+                data-show-currency-select="true"
+                data-positive-color="#059669,#34d399"
+                data-negative-color="#e11d48,#fb7185"
+                data-bg-color="#ecfdf5,#0a1a14"
+                data-bg-secondary-color="#d1fae5,#14261a"
+                data-text-color="#064e3b,#a7f3d0"
+                data-text-secondary-color="#10b981,#6ee7b7"
+                data-border-color="#a7f3d0,#1a3a24">
+            </vunelix-currency-heatmap>
+        </div>
+    </div>
+
+    <!-- 3. Asia Pacific, No Presets, Purple theme -->
+    <div class="widget-section">
+        <div class="widget-label">Asia Pacific — No Preset Tabs</div>
+        <div class="widget-frame">
+            <vunelix-currency-heatmap
+                data-preset="asia"
+                data-show-presets="false"
+                data-time-period="1w"
+                data-positive-color="#7c3aed,#a78bfa"
+                data-negative-color="#d97706,#fbbf24"
+                data-bg-color="#faf5ff,#110e1a"
+                data-bg-secondary-color="#f3e8ff,#1e1530"
+                data-text-color="#4c1d95,#e9d5ff"
+                data-text-secondary-color="#7c3aed,#a78bfa"
+                data-border-color="#ddd6fe,#3b2d5e">
+            </vunelix-currency-heatmap>
+        </div>
+    </div>
+
+    <!-- 4. Europe, Monthly, Ocean Blue theme -->
+    <div class="widget-section">
+        <div class="widget-label">Europe — Monthly Period, Ocean Blue</div>
+        <div class="widget-frame">
+            <vunelix-currency-heatmap
+                data-preset="europe"
+                data-time-period="1"
+                data-show-time-period="true"
+                data-positive-color="#0284c7,#38bdf8"
+                data-negative-color="#be123c,#fda4af"
+                data-bg-color="#f0f9ff,#0c1222"
+                data-bg-secondary-color="#e0f2fe,#1e293b"
+                data-text-color="#0c4a6e,#e0f2fe"
+                data-text-secondary-color="#0369a1,#7dd3fc"
+                data-border-color="#bae6fd,#1e3a5f">
+            </vunelix-currency-heatmap>
+        </div>
+    </div>
+
+    <!-- 5. Custom Tabs — Your Own Currency Groups, Forest Green theme -->
+    <div class="widget-section">
+        <div class="widget-label">Custom Tabs — Your Own Currency Groups</div>
+        <div class="widget-frame">
+            <vunelix-currency-heatmap
+                data-presets='{"South Asian":"INR,PKR,BDT,LKR,NPR","Gulf":"AED,SAR,QAR,KWD,BHD,OMR","BRICS":"CNY,INR,BRL,ZAR,RUB"}'
+                data-preset="south-asian"
+                data-show-time-period="true"
+                data-positive-color="#15803d,#4ade80"
+                data-negative-color="#b91c1c,#fca5a5"
+                data-bg-color="#f0fdf4,#0a160e"
+                data-bg-secondary-color="#dcfce7,#14261a"
+                data-text-color="#14532d,#bbf7d0"
+                data-text-secondary-color="#16a34a,#86efac"
+                data-border-color="#bbf7d0,#1a3a24">
+            </vunelix-currency-heatmap>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/currency-heatmap" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/heatmap/vunelix-currency-heatmap.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

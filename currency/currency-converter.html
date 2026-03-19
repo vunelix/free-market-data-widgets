@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix Currency Converter Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>Currency Converter</h1>
+        <p>Real-time currency converter with exchange rate chart. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default — USD to EUR -->
+    <div class="widget-section">
+        <div class="widget-label">Default — USD to EUR</div>
+        <div class="widget-frame">
+            <vunelix-currency-converter></vunelix-currency-converter>
+        </div>
+    </div>
+
+    <!-- 2. GBP to JPY, No Chart, Emerald/Rose theme -->
+    <div class="widget-section">
+        <div class="widget-label">GBP to JPY — No Chart, Custom Colors</div>
+        <div class="widget-frame">
+            <vunelix-currency-converter
+                data-from="GBP"
+                data-to="JPY"
+                data-show-chart="false"
+                data-positive-color="#059669,#34d399"
+                data-negative-color="#e11d48,#fb7185"
+                data-bg-color="#ecfdf5,#0a1a14"
+                data-bg-secondary-color="#d1fae5,#14261a"
+                data-text-color="#064e3b,#a7f3d0"
+                data-text-secondary-color="#10b981,#6ee7b7"
+                data-border-color="#a7f3d0,#1a3a24">
+            </vunelix-currency-converter>
+        </div>
+    </div>
+
+    <!-- 3. EUR to CHF, No Swap, No Rate Info, Purple/Amber theme -->
+    <div class="widget-section">
+        <div class="widget-label">EUR to CHF — Minimal, Purple Theme</div>
+        <div class="widget-frame">
+            <vunelix-currency-converter
+                data-from="EUR"
+                data-to="CHF"
+                data-show-swap-btn="false"
+                data-show-rate-info="false"
+                data-positive-color="#7c3aed,#a78bfa"
+                data-negative-color="#d97706,#fbbf24"
+                data-bg-color="#faf5ff,#110e1a"
+                data-bg-secondary-color="#f3e8ff,#1e1530"
+                data-text-color="#4c1d95,#e9d5ff"
+                data-text-secondary-color="#7c3aed,#a78bfa"
+                data-border-color="#ddd6fe,#3b2d5e">
+            </vunelix-currency-converter>
+        </div>
+    </div>
+
+    <!-- 4. AUD to INR, Full Features, Ocean Blue theme -->
+    <div class="widget-section">
+        <div class="widget-label">AUD to INR — Full Features, Ocean Blue</div>
+        <div class="widget-frame">
+            <vunelix-currency-converter
+                data-from="AUD"
+                data-to="INR"
+                data-show-chart="true"
+                data-show-rate-info="true"
+                data-show-swap-btn="true"
+                data-positive-color="#0284c7,#38bdf8"
+                data-negative-color="#be123c,#fda4af"
+                data-bg-color="#f0f9ff,#0c1222"
+                data-bg-secondary-color="#e0f2fe,#1e293b"
+                data-text-color="#0c4a6e,#e0f2fe"
+                data-text-secondary-color="#0369a1,#7dd3fc"
+                data-border-color="#bae6fd,#1e3a5f">
+            </vunelix-currency-converter>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/currency-converter" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/vunelix-currency-converter.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

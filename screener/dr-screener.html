@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix DR Screener Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>DR Screener</h1>
+        <p>Depositary receipts screener with valuation, earnings, and financial data. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default -->
+    <div class="widget-section">
+        <div class="widget-label">Default — Overview</div>
+        <div class="widget-frame">
+            <vunelix-dr-screener></vunelix-dr-screener>
+        </div>
+    </div>
+
+    <!-- 2. Earnings Tab, Teal theme -->
+    <div class="widget-section">
+        <div class="widget-label">Earnings — Sorted by Market Cap</div>
+        <div class="widget-frame">
+            <vunelix-dr-screener
+                data-default-preset="earnings"
+                data-per-page="50"
+                data-default-sort="earnings.market_cap_desc"
+                data-default-period="1w"
+                data-animation-mode="digits"
+                data-animation-duration="1000"
+                data-enable-storage="true"
+                data-positive-color="#0d9488,#2dd4bf"
+                data-negative-color="#e11d48,#fb7185"
+                data-bg-color="#f0fdfa,#0a1a1a"
+                data-text-color="#134e4a,#ccfbf1"
+                data-text-secondary-color="#0d9488,#5eead4"
+                data-border-color="#99f6e4,#1a3a3a">
+            </vunelix-dr-screener>
+        </div>
+    </div>
+
+    <!-- 3. Custom Tabs, Forest Green theme -->
+    <div class="widget-section">
+        <div class="widget-label">Custom Tabs</div>
+        <div class="widget-frame">
+            <vunelix-dr-screener
+                data-custom-presets='{"Valuation":["price","change-percent","market-cap-stock","pe-ratio","eps-ttm"],"Income":["price","total-revenue-ttm","net-income-ttm","gross-profit-ttm"]}'
+                data-enable-filter="false"
+                data-enable-fav="false"
+                data-enable-color-groups="false"
+                data-show-description="false"
+                data-animation-mode="full"
+                data-animation-duration="2000"
+                data-positive-color="#15803d,#4ade80"
+                data-negative-color="#b91c1c,#fca5a5"
+                data-bg-color="#f0fdf4,#0a160e"
+                data-text-color="#14532d,#bbf7d0"
+                data-text-secondary-color="#16a34a,#86efac"
+                data-border-color="#bbf7d0,#1a3a24">
+            </vunelix-dr-screener>
+        </div>
+    </div>
+
+    <!-- 4. Minimal, Ocean Blue theme -->
+    <div class="widget-section">
+        <div class="widget-label">Minimal — No Controls</div>
+        <div class="widget-frame">
+            <vunelix-dr-screener
+                data-enable-presets="false"
+                data-enable-period="false"
+                data-enable-search="false"
+                data-enable-settings="false"
+                data-enable-columns="false"
+                data-enable-filter="false"
+                data-enable-fav="false"
+                data-show-logo="false"
+                data-show-ticker="false"
+                data-enable-sort="false"
+                data-enable-infinite-scroll="true"
+                data-per-page="50"
+                data-animation-mode="none"
+                data-positive-color="#0284c7,#38bdf8"
+                data-negative-color="#be123c,#fda4af"
+                data-bg-color="#f0f9ff,#0c1222"
+                data-text-color="#0c4a6e,#e0f2fe"
+                data-text-secondary-color="#0369a1,#7dd3fc"
+                data-border-color="#bae6fd,#1e3a5f">
+            </vunelix-dr-screener>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/dr-screener" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/screener/vunelix-dr-screener.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

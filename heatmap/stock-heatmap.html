@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix Stock Heatmap Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>Stock Heatmap</h1>
+        <p>Visual heatmap of stock market performance by sector, index, and country. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default — US Stocks -->
+    <div class="widget-section">
+        <div class="widget-label">Default — US Stocks</div>
+        <div class="widget-frame">
+            <vunelix-stock-heatmap></vunelix-stock-heatmap>
+        </div>
+    </div>
+
+    <!-- 2. Gradient, Rounded, Symbol Display, Emerald theme -->
+    <div class="widget-section">
+        <div class="widget-label">Gradient — Rounded Corners, Symbol View</div>
+        <div class="widget-frame">
+            <vunelix-stock-heatmap
+                data-default-color-mode="gradient"
+                data-default-border-radius="true"
+                data-default-display-name="symbol"
+                data-default-display-value="price"
+                data-default-per-page="50"
+                data-positive-color="#059669,#34d399"
+                data-negative-color="#e11d48,#fb7185"
+                data-bg-color="#ecfdf5,#0a1a14"
+                data-text-color="#064e3b,#a7f3d0"
+                data-text-secondary-color="#10b981,#6ee7b7"
+                data-border-color="#a7f3d0,#1a3a24">
+            </vunelix-stock-heatmap>
+        </div>
+    </div>
+
+    <!-- 3. Minimal — No Controls, Indigo theme -->
+    <div class="widget-section">
+        <div class="widget-label">Minimal — No Controls</div>
+        <div class="widget-frame">
+            <vunelix-stock-heatmap
+                data-enable-settings="false"
+                data-enable-screenshot="false"
+                data-enable-fullscreen="false"
+                data-enable-zoom-controls="false"
+                data-enable-sort-select="false"
+                data-enable-color-select="false"
+                data-enable-per-page-select="false"
+                data-enable-indices-select="false"
+                data-enable-sector-select="false"
+                data-enable-country-select="false"
+                data-enable-primary-toggle="false"
+                data-enable-legend="false"
+                data-default-per-page="25"
+                data-default-show-logo="false"
+                data-positive-color="#4f46e5,#818cf8"
+                data-negative-color="#dc2626,#f87171"
+                data-bg-color="#eef2ff,#0f1120"
+                data-text-color="#312e81,#c7d2fe"
+                data-text-secondary-color="#6366f1,#a5b4fc"
+                data-border-color="#c7d2fe,#2e3460">
+            </vunelix-stock-heatmap>
+        </div>
+    </div>
+
+    <!-- 4. UK Stocks, Auto Update, Amber theme -->
+    <div class="widget-section">
+        <div class="widget-label">UK Stocks — Auto Update, Amber</div>
+        <div class="widget-frame">
+            <vunelix-stock-heatmap
+                data-default-country="GB"
+                data-auto-update="true"
+                data-default-per-page="50"
+                data-enable-wheel-zoom="true"
+                data-default-border-radius="true"
+                data-default-is-primary="true"
+                data-positive-color="#b45309,#fbbf24"
+                data-negative-color="#9f1239,#fda4af"
+                data-bg-color="#fffbeb,#1a1408"
+                data-text-color="#78350f,#fde68a"
+                data-text-secondary-color="#b45309,#f59e0b"
+                data-border-color="#fde68a,#4a3820">
+            </vunelix-stock-heatmap>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/stock-heatmap" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/heatmap/vunelix-stock-heatmap.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

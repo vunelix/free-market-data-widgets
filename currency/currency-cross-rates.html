@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix Currency Cross Rates Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>Currency Cross Rates</h1>
+        <p>Live cross rates table for forex pairs. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default — Overview -->
+    <div class="widget-section">
+        <div class="widget-label">Default — Overview</div>
+        <div class="widget-frame">
+            <vunelix-currency-cross-rates></vunelix-currency-cross-rates>
+        </div>
+    </div>
+
+    <!-- 2. Major Pairs, Currency Select, Teal/Rose theme -->
+    <div class="widget-section">
+        <div class="widget-label">Major Pairs — Currency Select Enabled</div>
+        <div class="widget-frame">
+            <vunelix-currency-cross-rates
+                data-preset="major"
+                data-show-currency-select="true"
+                data-positive-color="#0d9488,#2dd4bf"
+                data-negative-color="#e11d48,#fb7185"
+                data-bg-color="#f0fdfa,#0a1a1a"
+                data-bg-secondary-color="#ccfbf1,#14292a"
+                data-text-color="#134e4a,#ccfbf1"
+                data-text-secondary-color="#0d9488,#5eead4"
+                data-border-color="#99f6e4,#1a3a3a">
+            </vunelix-currency-cross-rates>
+        </div>
+    </div>
+
+    <!-- 3. Exotic Pairs, No Presets, Indigo theme -->
+    <div class="widget-section">
+        <div class="widget-label">Exotic Pairs — No Preset Tabs</div>
+        <div class="widget-frame">
+            <vunelix-currency-cross-rates
+                data-preset="exotic"
+                data-show-presets="false"
+                data-positive-color="#4f46e5,#818cf8"
+                data-negative-color="#dc2626,#f87171"
+                data-bg-color="#eef2ff,#0f1120"
+                data-bg-secondary-color="#e0e7ff,#1a1e36"
+                data-text-color="#312e81,#c7d2fe"
+                data-text-secondary-color="#6366f1,#a5b4fc"
+                data-border-color="#c7d2fe,#2e3460">
+            </vunelix-currency-cross-rates>
+        </div>
+    </div>
+
+    <!-- 4. Middle East, Flash Animation, Amber theme -->
+    <div class="widget-section">
+        <div class="widget-label">Middle East — Flash Animation, Amber</div>
+        <div class="widget-frame">
+            <vunelix-currency-cross-rates
+                data-preset="middle-east"
+                data-animation-mode="flash"
+                data-show-currency-select="true"
+                data-positive-color="#b45309,#fbbf24"
+                data-negative-color="#9f1239,#fda4af"
+                data-bg-color="#fffbeb,#1a1408"
+                data-bg-secondary-color="#fef3c7,#2a2010"
+                data-text-color="#78350f,#fde68a"
+                data-text-secondary-color="#b45309,#f59e0b"
+                data-border-color="#fde68a,#4a3820">
+            </vunelix-currency-cross-rates>
+        </div>
+    </div>
+
+    <!-- 5. Custom Tabs — Your Own Currency Groups, Cyan theme -->
+    <div class="widget-section">
+        <div class="widget-label">Custom Tabs — Your Own Currency Groups</div>
+        <div class="widget-frame">
+            <vunelix-currency-cross-rates
+                data-presets='{"South Asian":"INR,PKR,BDT,LKR,NPR","Gulf":"AED,SAR,QAR,KWD,BHD,OMR","BRICS":"CNY,INR,BRL,ZAR,RUB"}'
+                data-preset="south-asian"
+                data-positive-color="#0891b2,#22d3ee"
+                data-negative-color="#dc2626,#f87171"
+                data-bg-color="#ecfeff,#0a1518"
+                data-bg-secondary-color="#cffafe,#132025"
+                data-text-color="#164e63,#cffafe"
+                data-text-secondary-color="#06b6d4,#67e8f9"
+                data-border-color="#a5f3fc,#1a3540">
+            </vunelix-currency-cross-rates>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/currency-cross-rates" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/vunelix-currency-cross-rates.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix Crypto Heatmap Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>Crypto Heatmap</h1>
+        <p>Visual heatmap of cryptocurrency performance by market cap, price, and volume. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default -->
+    <div class="widget-section">
+        <div class="widget-label">Default — Coins by Market Cap</div>
+        <div class="widget-frame">
+            <vunelix-crypto-heatmap></vunelix-crypto-heatmap>
+        </div>
+    </div>
+
+    <!-- 2. Gradient, Rounded, No Logo, Teal theme -->
+    <div class="widget-section">
+        <div class="widget-label">Gradient Mode — Rounded, No Logo</div>
+        <div class="widget-frame">
+            <vunelix-crypto-heatmap
+                data-default-color-mode="gradient"
+                data-default-border-radius="true"
+                data-default-show-logo="false"
+                data-default-display-name="symbol"
+                data-default-per-page="50"
+                data-positive-color="#0d9488,#2dd4bf"
+                data-negative-color="#e11d48,#fb7185"
+                data-bg-color="#f0fdfa,#0a1a1a"
+                data-text-color="#134e4a,#ccfbf1"
+                data-text-secondary-color="#0d9488,#5eead4"
+                data-border-color="#99f6e4,#1a3a3a">
+            </vunelix-crypto-heatmap>
+        </div>
+    </div>
+
+    <!-- 3. Minimal — No Toolbar, No Tooltip, Purple theme -->
+    <div class="widget-section">
+        <div class="widget-label">Minimal — No Controls, Symbol Only</div>
+        <div class="widget-frame">
+            <vunelix-crypto-heatmap
+                data-enable-settings="false"
+                data-enable-screenshot="false"
+                data-enable-fullscreen="false"
+                data-enable-zoom-controls="false"
+                data-enable-type-select="false"
+                data-enable-sort-select="false"
+                data-enable-color-select="false"
+                data-enable-per-page-select="false"
+                data-enable-legend="false"
+                data-default-display-name="symbol"
+                data-default-display-value="price"
+                data-default-per-page="25"
+                data-positive-color="#7c3aed,#a78bfa"
+                data-negative-color="#d97706,#fbbf24"
+                data-bg-color="#faf5ff,#110e1a"
+                data-text-color="#4c1d95,#e9d5ff"
+                data-text-secondary-color="#7c3aed,#a78bfa"
+                data-border-color="#ddd6fe,#3b2d5e">
+            </vunelix-crypto-heatmap>
+        </div>
+    </div>
+
+    <!-- 4. memes Tokens, Auto Update, Ocean Blue theme -->
+    <div class="widget-section">
+        <div class="widget-label">Memes — Auto Update, Ocean Blue</div>
+        <div class="widget-frame">
+            <vunelix-crypto-heatmap
+                data-default-type="memes"
+                data-auto-update="true"
+                data-default-sort="24h_vol"
+                data-default-per-page="50"
+                data-enable-wheel-zoom="true"
+                data-default-border-radius="true"
+                data-positive-color="#0284c7,#38bdf8"
+                data-negative-color="#be123c,#fda4af"
+                data-bg-color="#f0f9ff,#0c1222"
+                data-text-color="#0c4a6e,#e0f2fe"
+                data-text-secondary-color="#0369a1,#7dd3fc"
+                data-border-color="#bae6fd,#1e3a5f">
+            </vunelix-crypto-heatmap>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/crypto-heatmap" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/heatmap/vunelix-crypto-heatmap.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>

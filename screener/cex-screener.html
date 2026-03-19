@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vunelix CEX Screener Widget — Live Demo</title>
+    <link rel="stylesheet" href="../assets/css/demo.css">
+</head>
+<body data-page-theme="light">
+
+    <div class="header">
+        <h1>CEX Screener</h1>
+        <p>Centralized exchange screener with volume, performance, and technical data. Switch themes to see how the widget adapts automatically.</p>
+
+        <div class="theme-bar">
+            <button class="theme-btn active" data-set-theme="light">Light</button>
+            <button class="theme-btn" data-set-theme="dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- 1. Default -->
+    <div class="widget-section">
+        <div class="widget-label">Default — Overview</div>
+        <div class="widget-frame">
+            <vunelix-cex-screener></vunelix-cex-screener>
+        </div>
+    </div>
+
+    <!-- 2. Volatility Tab, Filters, Teal theme -->
+    <div class="widget-section">
+        <div class="widget-label">Volatility — With Filters</div>
+        <div class="widget-frame">
+            <vunelix-cex-screener
+                data-default-preset="volatility_analysis"
+                data-per-page="50"
+                data-default-sort="perf.24h_vol_desc"
+                data-default-period="1d"
+                data-animation-mode="flash"
+                data-animation-duration="1500"
+                data-enable-storage="true"
+                data-positive-color="#0d9488,#2dd4bf"
+                data-negative-color="#e11d48,#fb7185"
+                data-bg-color="#f0fdfa,#0a1a1a"
+                data-text-color="#134e4a,#ccfbf1"
+                data-text-secondary-color="#0d9488,#5eead4"
+                data-border-color="#99f6e4,#1a3a3a">
+            </vunelix-cex-screener>
+        </div>
+    </div>
+
+    <!-- 3. Custom Tabs, Indigo theme -->
+    <div class="widget-section">
+        <div class="widget-label">Custom Tabs</div>
+        <div class="widget-frame">
+            <vunelix-cex-screener
+                data-custom-presets='{"Volume":["price","change-percent","volume-24h","market-cap"],"Price Action":["price","change","change-percent","open","high","low"]}'
+                data-enable-filter="false"
+                data-enable-fav="false"
+                data-enable-color-groups="false"
+                data-show-description="false"
+                data-animation-mode="digits"
+                data-animation-duration="2000"
+                data-positive-color="#4f46e5,#818cf8"
+                data-negative-color="#dc2626,#f87171"
+                data-bg-color="#eef2ff,#0f1120"
+                data-text-color="#312e81,#c7d2fe"
+                data-text-secondary-color="#6366f1,#a5b4fc"
+                data-border-color="#c7d2fe,#2e3460">
+            </vunelix-cex-screener>
+        </div>
+    </div>
+
+    <!-- 4. Minimal, Slate/Orange theme -->
+    <div class="widget-section">
+        <div class="widget-label">Minimal — Infinite Scroll</div>
+        <div class="widget-frame">
+            <vunelix-cex-screener
+                data-enable-presets="false"
+                data-enable-period="false"
+                data-enable-search="false"
+                data-enable-settings="false"
+                data-enable-columns="false"
+                data-enable-filter="false"
+                data-enable-fav="false"
+                data-show-logo="false"
+                data-show-ticker="false"
+                data-enable-sort="false"
+                data-enable-infinite-scroll="true"
+                data-per-page="50"
+                data-animation-mode="none"
+                data-positive-color="#ea580c,#fb923c"
+                data-negative-color="#7c3aed,#c4b5fd"
+                data-bg-color="#fff7ed,#1a1008"
+                data-text-color="#7c2d12,#fed7aa"
+                data-text-secondary-color="#c2410c,#fdba74"
+                data-border-color="#fed7aa,#4a2c18">
+            </vunelix-cex-screener>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://vunelix.com/widgets/cex-screener" target="_blank">Documentation</a> &middot;
+        <a href="https://vunelix.com" target="_blank">Vunelix</a>
+    </div>
+
+    <script src="https://vunelix.com/assets/bundles/js/widgets/screener/vunelix-cex-screener.js" type="module"></script>
+    <script src="../assets/js/demo.js"></script>
+</body>
+</html>
