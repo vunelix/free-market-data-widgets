@@ -10,7 +10,7 @@ Built by **[Vunelix](https://vunelix.com)** — a free financial data platform f
 
 ## Why Use These Widgets?
 
-- **Free** — No subscription, no API key, no sign-up required to get started
+- **Free** — Use for free, premium plans available for higher limits
 - **Real-time** — Live prices via WebSocket, not delayed or cached data
 - **17 Widgets** — Tickers, screeners, heatmaps, market movers, currency tools
 - **Auto Theme** — Detects light/dark mode and adapts automatically
@@ -19,7 +19,7 @@ Built by **[Vunelix](https://vunelix.com)** — a free financial data platform f
 - **Responsive** — Desktop, tablet, and mobile ready
 - **Lightweight** — Each widget JS is 30-80 KB gzipped, loads async
 - **No Dependencies** — Pure web components, works with React, Vue, Angular, or static HTML
-- **Multi-language** — 20+ languages supported out of the box
+- **Multi-language** — 8 languages supported including RTL
 
 ---
 
@@ -203,7 +203,9 @@ Advanced data tables with sorting, filtering, custom tabs, watchlists, and techn
 </vunelix-ticker-tape>
 ```
 
-**Step 3** — Done. No API key, no sign-up, no build step.
+**Step 3** — Sign up at **[developers.vunelix.com](https://developers.vunelix.com)**, add your domain and verify it.
+
+**Step 4** — Done. Your widgets are now live on your website.
 
 Visit **[vunelix.com/widgets](https://vunelix.com/widgets)** for the full interactive configurator where you can customize settings and copy the embed code.
 
@@ -297,24 +299,17 @@ data-default-filters='{"earnings.market_cap_gt":"10000000000","active.chp_gt":"1
 
 ### Language
 
-Set the widget language (20+ supported):
+Set the widget language:
 
 ```html
 data-lang="en"    <!-- English (default) -->
-data-lang="ar"    <!-- Arabic (RTL supported) -->
-data-lang="zh"    <!-- Chinese -->
-data-lang="es"    <!-- Spanish -->
-data-lang="fr"    <!-- French -->
-data-lang="de"    <!-- German -->
-data-lang="ja"    <!-- Japanese -->
-data-lang="ko"    <!-- Korean -->
-data-lang="tr"    <!-- Turkish -->
-data-lang="ru"    <!-- Russian -->
-data-lang="pt"    <!-- Portuguese -->
-data-lang="it"    <!-- Italian -->
-data-lang="hi"    <!-- Hindi -->
-data-lang="ur"    <!-- Urdu (RTL supported) -->
-data-lang="fa"    <!-- Persian (RTL supported) -->
+data-lang="ar"    <!-- العربية (RTL supported) -->
+data-lang="es"    <!-- Español -->
+data-lang="cn"    <!-- 中文 -->
+data-lang="ru"    <!-- Русский -->
+data-lang="de"    <!-- Deutsch -->
+data-lang="fr"    <!-- Français -->
+data-lang="ja"    <!-- 日本語 -->
 ```
 
 ---
@@ -410,14 +405,18 @@ free-market-data-widgets/
 
 - **Website** — [vunelix.com](https://vunelix.com)
 - **Widget Configurator** — [vunelix.com/widgets](https://vunelix.com/widgets)
-- **Crypto Screener** — [vunelix.com/screener/crypto](https://vunelix.com/screener/crypto)
-- **Stock Screener** — [vunelix.com/screener/stock](https://vunelix.com/screener/stock)
-- **Forex Screener** — [vunelix.com/screener/forex](https://vunelix.com/screener/forex)
-- **Crypto Heatmap** — [vunelix.com/heatmap/crypto](https://vunelix.com/heatmap/crypto)
-- **Stock Heatmap** — [vunelix.com/heatmap/stock](https://vunelix.com/heatmap/stock)
-- **Currency Heatmap** — [vunelix.com/heatmap/currency](https://vunelix.com/heatmap/currency)
+- **Crypto Screener** — [vunelix.com/crypto-coins-screener](https://vunelix.com/crypto-coins-screener)
+- **Stock Screener** — [vunelix.com/stock-screener](https://vunelix.com/stock-screener)
+- **Forex Screener** — [vunelix.com/forex-screener](https://vunelix.com/forex-screener)
+- **CEX Screener** — [vunelix.com/crypto-cex-screener](https://vunelix.com/crypto-cex-screener)
+- **DEX Screener** — [vunelix.com/crypto-dex-screener](https://vunelix.com/crypto-dex-screener)
+- **Fund Screener** — [vunelix.com/stock-funds-screener](https://vunelix.com/stock-funds-screener)
+- **DR Screener** — [vunelix.com/stock-dr-screener](https://vunelix.com/stock-dr-screener)
+- **Crypto Heatmap** — [vunelix.com/crypto-heatmap](https://vunelix.com/crypto-heatmap)
+- **Stock Heatmap** — [vunelix.com/stock-heatmap](https://vunelix.com/stock-heatmap)
+- **Currency Heatmap** — [vunelix.com/currency-heatmap](https://vunelix.com/currency-heatmap)
 - **Currency Converter** — [vunelix.com/currency-converter](https://vunelix.com/currency-converter)
-- **Currency Cross Rates** — [vunelix.com/cross-rates](https://vunelix.com/cross-rates)
+- **Currency Cross Rates** — [vunelix.com/currency-cross-rates](https://vunelix.com/currency-cross-rates)
 
 ---
 
