@@ -10,7 +10,7 @@ Built by **[Vunelix](https://vunelix.com)** — a free financial data platform f
 
 ## Why Use These Widgets?
 
-- **Free** — Use for free, premium plans available for higher limits
+- **Free** — Free to use on any website
 - **Real-time** — Live prices via WebSocket, not delayed or cached data
 - **17 Widgets** — Tickers, screeners, heatmaps, market movers, currency tools
 - **Auto Theme** — Detects light/dark mode and adapts automatically
