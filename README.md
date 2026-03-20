@@ -1,14 +1,30 @@
-# Free Market Data Widgets — Crypto, Forex & Stock Widgets for Any Website
+# Vunelix — Free Crypto, Forex & Stock Market Widgets for Any Website
 
-Free, embeddable, real-time market data widgets for websites and blogs. Display live cryptocurrency prices, forex rates, stock tickers, market screeners, heatmaps, and currency converters — no API key needed.
-
-Built by **[Vunelix](https://vunelix.com)** — a free financial data platform for developers, traders, and content creators.
+Embeddable real-time market data widgets by **[Vunelix](https://vunelix.com)**. Add live crypto prices, forex rates, stock tickers, screeners, heatmaps, and currency converters to your website with a single script tag.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
-## Why Use These Widgets?
+## What is Vunelix?
+
+[Vunelix](https://vunelix.com) is a financial data platform that provides 17 embeddable market data widgets for websites and blogs. Built with Web Components and Shadow DOM, these widgets cover crypto, forex, stocks, ETFs, DEX, and CEX markets — all from one platform.
+
+If you've used widgets from TradingView, CoinMarketCap, or CoinGecko, Vunelix offers a Web Component-based approach with deeper customization — custom colors, themes, column presets, and multi-language support without iframe limitations.
+
+---
+
+## Feature Highlights
+
+| Feature | Vunelix | TradingView | CoinMarketCap | CoinGecko |
+|---------|---------|-------------|---------------|-----------|
+| Widget count | 17+ | 10+ | Few | Few |
+| Markets covered | Crypto, Forex, Stocks, ETFs, DEX, CEX | Mostly charts | Crypto only | Crypto only |
+| Rendering | Shadow DOM (Web Components) | iframe | iframe | iframe |
+| Custom colors & themes | Extensive | Limited | Minimal | Minimal |
+| WebSocket real-time | Yes | Yes | No | No |
+| Custom column presets | Yes | No | No | No |
+| Multi-language + RTL | 8 languages | Yes | Limited | Limited |
 
 - **Free** — Free to use on any website
 - **Real-time** — Live prices via WebSocket, not delayed or cached data
@@ -17,174 +33,14 @@ Built by **[Vunelix](https://vunelix.com)** — a free financial data platform f
 - **Fully Customizable** — Colors, languages, columns, animations, and more
 - **Shadow DOM** — Isolated from your page CSS, zero style conflicts
 - **Responsive** — Desktop, tablet, and mobile ready
-- **Lightweight** — Each widget JS is 30-80 KB gzipped, loads async
+- **Lightweight** — Each widget JS loads async
 - **No Dependencies** — Pure web components, works with React, Vue, Angular, or static HTML
-- **Multi-language** — 8 languages supported including RTL
-
----
-
-## Installation
-
-### Download
-
-```bash
-# Clone the repo
-git clone https://github.com/vunelix/free-market-data-widgets.git
-
-# Or download via npx (no install needed)
-npx degit vunelix/free-market-data-widgets my-widgets
-
-# Or download ZIP
-curl -L https://github.com/vunelix/free-market-data-widgets/archive/refs/heads/main.zip -o widgets.zip
-```
-
-### Embed in Your Website
-
-Widgets are loaded via a single `<script>` tag — no npm install, no build step, no bundler config.
-
-```html
-<!-- Add the widget tag -->
-<vunelix-ticker-tape></vunelix-ticker-tape>
-
-<!-- Load the widget script -->
-<script src="https://vunelix.com/assets/bundles/js/widgets/ticker/vunelix-ticker-tape.js" type="module"></script>
-```
-
-That's it. The script registers the web component and renders the widget automatically.
-
-> Scripts are served from `vunelix.com` CDN. Updates are backwards-compatible — existing `data-*` attributes will continue to work.
-
----
-
-## All Widgets
-
-### Ticker Widgets
-
-![Ticker Tape Widget](assets/images/ticker-tape.png)
-
-Scrolling and static real-time price tickers for crypto, forex, and stocks.
-
-| Widget | Live Demo | Documentation |
-|--------|-----------|---------------|
-| **Ticker Tape** — Scrolling real-time ticker | [Demo](ticker/ticker-tape.html) | [vunelix.com/widgets/ticker-tape](https://vunelix.com/widgets/ticker-tape) |
-| **Ticker** — Static grid ticker | [Demo](ticker/ticker.html) | [vunelix.com/widgets/ticker](https://vunelix.com/widgets/ticker) |
-
-**Embed a scrolling ticker:**
-```html
-<vunelix-ticker-tape
-    data-symbols="BINANCE:BTCUSDT,NASDAQ:AAPL,FX:EURUSD"
-    data-speed="35"
-    data-animation-mode="digits">
-</vunelix-ticker-tape>
-<script src="https://vunelix.com/assets/bundles/js/widgets/ticker/vunelix-ticker-tape.js" type="module"></script>
-```
-
----
-
-### Market Movers Widgets
-
-![Market Movers Widget](assets/images/market-movers.png)
-
-Top gainers and losers across crypto, forex, and stock markets — updated in real-time.
-
-| Widget | Live Demo | Documentation |
-|--------|-----------|---------------|
-| **Crypto Market Movers** — Top crypto gainers & losers | [Demo](market-movers/crypto-market-movers.html) | [vunelix.com/widgets/crypto-market-movers](https://vunelix.com/widgets/crypto-market-movers) |
-| **Forex Market Movers** — Top forex pair movers | [Demo](market-movers/forex-market-movers.html) | [vunelix.com/widgets/forex-market-movers](https://vunelix.com/widgets/forex-market-movers) |
-| **Stock Market Movers** — Top stock gainers & losers | [Demo](market-movers/stock-market-movers.html) | [vunelix.com/widgets/stock-market-movers](https://vunelix.com/widgets/stock-market-movers) |
-
-**Embed crypto market movers:**
-```html
-<vunelix-crypto-market-movers
-    data-sort-by="active.chp_desc"
-    data-per-page="12"
-    data-change-badge="true">
-</vunelix-crypto-market-movers>
-<script src="https://vunelix.com/assets/bundles/js/widgets/market-movers/vunelix-crypto-market-movers.js" type="module"></script>
-```
-
----
-
-### Currency Widgets
-
-![Currency Converter Widget](assets/images/currency-converter.png)
-
-Currency converter and cross rates table with live exchange rates.
-
-| Widget | Live Demo | Documentation |
-|--------|-----------|---------------|
-| **Currency Converter** — Convert between 150+ currencies | [Demo](currency/currency-converter.html) | [vunelix.com/widgets/currency-converter](https://vunelix.com/widgets/currency-converter) |
-| **Currency Cross Rates** — Live cross rates table | [Demo](currency/currency-cross-rates.html) | [vunelix.com/widgets/currency-cross-rates](https://vunelix.com/widgets/currency-cross-rates) |
-
-**Embed a currency converter:**
-```html
-<vunelix-currency-converter
-    data-from="USD"
-    data-to="EUR"
-    data-show-chart="true">
-</vunelix-currency-converter>
-<script src="https://vunelix.com/assets/bundles/js/widgets/vunelix-currency-converter.js" type="module"></script>
-```
-
----
-
-### Heatmap Widgets
-
-![Crypto Heatmap Widget](assets/images/crypto-heatmap.png)
-
-Visual heatmaps showing market performance at a glance — crypto, stocks, and currencies.
-
-| Widget | Live Demo | Documentation |
-|--------|-----------|---------------|
-| **Crypto Heatmap** — Crypto market cap & price heatmap | [Demo](heatmap/crypto-heatmap.html) | [vunelix.com/widgets/crypto-heatmap](https://vunelix.com/widgets/crypto-heatmap) |
-| **Stock Heatmap** — Stock market heatmap by sector | [Demo](heatmap/stock-heatmap.html) | [vunelix.com/widgets/stock-heatmap](https://vunelix.com/widgets/stock-heatmap) |
-| **Currency Heatmap** — Forex pair performance heatmap | [Demo](heatmap/currency-heatmap.html) | [vunelix.com/widgets/currency-heatmap](https://vunelix.com/widgets/currency-heatmap) |
-
-**Embed a crypto heatmap:**
-```html
-<vunelix-crypto-heatmap
-    data-default-per-page="100"
-    data-default-color-mode="gradient"
-    data-default-border-radius="true"
-    data-enable-zoom-controls="true">
-</vunelix-crypto-heatmap>
-<script src="https://vunelix.com/assets/bundles/js/widgets/heatmap/vunelix-crypto-heatmap.js" type="module"></script>
-```
-
----
-
-### Screener Widgets
-
-![Stock Screener Widget](assets/images/stock-screener.png)
-
-Advanced data tables with sorting, filtering, custom tabs, watchlists, and technical analysis.
-
-| Widget | Live Demo | Documentation |
-|--------|-----------|---------------|
-| **Crypto Screener** — Coins, tokens, DeFi with 100+ metrics | [Demo](screener/crypto-screener.html) | [vunelix.com/widgets/crypto-screener](https://vunelix.com/widgets/crypto-screener) |
-| **Stock Screener** — Stocks with fundamentals, earnings & dividends | [Demo](screener/stock-screener.html) | [vunelix.com/widgets/stock-screener](https://vunelix.com/widgets/stock-screener) |
-| **Forex Screener** — Forex pairs with bid/ask, spread & technicals | [Demo](screener/forex-screener.html) | [vunelix.com/widgets/forex-screener](https://vunelix.com/widgets/forex-screener) |
-| **Fund Screener** — ETFs & mutual funds with dividends & cash flow | [Demo](screener/fund-screener.html) | [vunelix.com/widgets/fund-screener](https://vunelix.com/widgets/fund-screener) |
-| **CEX Screener** — Centralized exchange pairs with volume data | [Demo](screener/cex-screener.html) | [vunelix.com/widgets/cex-screener](https://vunelix.com/widgets/cex-screener) |
-| **DEX Screener** — Decentralized exchange tokens with liquidity | [Demo](screener/dex-screener.html) | [vunelix.com/widgets/dex-screener](https://vunelix.com/widgets/dex-screener) |
-| **DR Screener** — Depositary receipts with valuation & income data | [Demo](screener/dr-screener.html) | [vunelix.com/widgets/dr-screener](https://vunelix.com/widgets/dr-screener) |
-
-**Embed a stock screener with custom tabs:**
-```html
-<vunelix-stock-screener
-    data-default-country="US"
-    data-per-page="50"
-    data-custom-presets='{"Price":["price","change","change-percent","volume"],"Fundamentals":["market-cap-stock","pe-ratio","eps-ttm","dividend-yield-current"]}'
-    data-animation-mode="digits">
-</vunelix-stock-screener>
-<script src="https://vunelix.com/assets/bundles/js/widgets/screener/vunelix-stock-screener.js" type="module"></script>
-```
 
 ---
 
 ## Quick Start
 
-**Step 1** — Add the widget HTML tag to your page:
+**Step 1** — Add the widget tag to your page:
 
 ```html
 <vunelix-ticker-tape></vunelix-ticker-tape>
@@ -203,17 +59,157 @@ Advanced data tables with sorting, filtering, custom tabs, watchlists, and techn
 </vunelix-ticker-tape>
 ```
 
-**Step 3** — Sign up at **[developers.vunelix.com](https://developers.vunelix.com)**, add your domain and verify it.
+**Step 3** — Sign up at **[vunelix.com](https://vunelix.com)**, add your domain and verify it.
 
-**Step 4** — Done. Your widgets are now live on your website.
+**Step 4** — Done. Your widgets are now live.
 
-Visit **[vunelix.com/widgets](https://vunelix.com/widgets)** for the full interactive configurator where you can customize settings and copy the embed code.
+Visit **[vunelix.com/widgets](https://vunelix.com/widgets)** for the full interactive widget configurator where you can customize settings and copy the embed code.
+
+---
+
+## Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/vunelix/free-market-data-widgets.git
+
+# Or download via npx (no install needed)
+npx degit vunelix/free-market-data-widgets my-widgets
+
+# Or download ZIP
+curl -L https://github.com/vunelix/free-market-data-widgets/archive/refs/heads/main.zip -o widgets.zip
+```
+
+Widgets are loaded via a single `<script>` tag — no npm install, no build step, no bundler config. The script registers the web component and renders the widget automatically.
+
+> Scripts are served from `vunelix.com` CDN. Updates are backwards-compatible — existing `data-*` attributes will continue to work.
+
+---
+
+## All Widgets
+
+### Ticker Widgets — Crypto, Forex & Stock Ticker
+
+![Ticker Tape Widget](assets/images/ticker-tape.png)
+
+Scrolling and static real-time price tickers for crypto, forex, and stocks.
+
+| Widget | Live Demo | Docs |
+|--------|-----------|------|
+| **Ticker Tape** — Scrolling real-time ticker | [Demo](ticker/ticker-tape.html) | [Docs](https://vunelix.com/widgets/ticker-tape) |
+| **Ticker** — Static grid ticker | [Demo](ticker/ticker.html) | [Docs](https://vunelix.com/widgets/ticker) |
+
+```html
+<vunelix-ticker-tape
+    data-symbols="BINANCE:BTCUSDT,NASDAQ:AAPL,FX:EURUSD"
+    data-speed="35"
+    data-animation-mode="digits">
+</vunelix-ticker-tape>
+<script src="https://vunelix.com/assets/bundles/js/widgets/ticker/vunelix-ticker-tape.js" type="module"></script>
+```
+
+---
+
+### Market Movers Widgets — Top Gainers & Losers
+
+![Market Movers Widget](assets/images/market-movers.png)
+
+Top gainers and losers across crypto, forex, and stock markets — updated in real-time.
+
+| Widget | Live Demo | Docs |
+|--------|-----------|------|
+| **Crypto Market Movers** | [Demo](market-movers/crypto-market-movers.html) | [Docs](https://vunelix.com/widgets/crypto-market-movers) |
+| **Forex Market Movers** | [Demo](market-movers/forex-market-movers.html) | [Docs](https://vunelix.com/widgets/forex-market-movers) |
+| **Stock Market Movers** | [Demo](market-movers/stock-market-movers.html) | [Docs](https://vunelix.com/widgets/stock-market-movers) |
+
+```html
+<vunelix-crypto-market-movers
+    data-sort-by="active.chp_desc"
+    data-per-page="12"
+    data-change-badge="true">
+</vunelix-crypto-market-movers>
+<script src="https://vunelix.com/assets/bundles/js/widgets/market-movers/vunelix-crypto-market-movers.js" type="module"></script>
+```
+
+---
+
+### Currency Widgets — Converter & Cross Rates
+
+![Currency Converter Widget](assets/images/currency-converter.png)
+
+Currency converter and cross rates table with live exchange rates — 150+ currencies supported.
+
+| Widget | Live Demo | Docs |
+|--------|-----------|------|
+| **Currency Converter** | [Demo](currency/currency-converter.html) | [Docs](https://vunelix.com/widgets/currency-converter) |
+| **Currency Cross Rates** | [Demo](currency/currency-cross-rates.html) | [Docs](https://vunelix.com/widgets/currency-cross-rates) |
+
+```html
+<vunelix-currency-converter
+    data-from="USD"
+    data-to="EUR"
+    data-show-chart="true">
+</vunelix-currency-converter>
+<script src="https://vunelix.com/assets/bundles/js/widgets/vunelix-currency-converter.js" type="module"></script>
+```
+
+---
+
+### Heatmap Widgets — Crypto, Stock & Currency Heatmap
+
+![Crypto Heatmap Widget](assets/images/crypto-heatmap.png)
+
+Visual heatmaps showing market performance at a glance — crypto market cap, stock sectors, and forex currencies.
+
+| Widget | Live Demo | Docs |
+|--------|-----------|------|
+| **Crypto Heatmap** | [Demo](heatmap/crypto-heatmap.html) | [Docs](https://vunelix.com/widgets/crypto-heatmap) |
+| **Stock Heatmap** | [Demo](heatmap/stock-heatmap.html) | [Docs](https://vunelix.com/widgets/stock-heatmap) |
+| **Currency Heatmap** | [Demo](heatmap/currency-heatmap.html) | [Docs](https://vunelix.com/widgets/currency-heatmap) |
+
+```html
+<vunelix-crypto-heatmap
+    data-default-per-page="100"
+    data-default-color-mode="gradient"
+    data-default-border-radius="true"
+    data-enable-zoom-controls="true">
+</vunelix-crypto-heatmap>
+<script src="https://vunelix.com/assets/bundles/js/widgets/heatmap/vunelix-crypto-heatmap.js" type="module"></script>
+```
+
+---
+
+### Screener Widgets — Crypto, Stock, Forex, DEX & CEX Screener
+
+![Stock Screener Widget](assets/images/stock-screener.png)
+
+Advanced data tables with sorting, filtering, custom column presets, watchlists, and technical analysis — covering crypto, stocks, forex, ETFs, DEX, CEX, and depositary receipts.
+
+| Widget | Live Demo | Docs |
+|--------|-----------|------|
+| **Crypto Screener** — Coins, tokens, DeFi metrics | [Demo](screener/crypto-screener.html) | [Docs](https://vunelix.com/widgets/crypto-screener) |
+| **Stock Screener** — Fundamentals, earnings & dividends | [Demo](screener/stock-screener.html) | [Docs](https://vunelix.com/widgets/stock-screener) |
+| **Forex Screener** — Bid/ask, spread & technicals | [Demo](screener/forex-screener.html) | [Docs](https://vunelix.com/widgets/forex-screener) |
+| **Fund Screener** — ETFs & mutual funds | [Demo](screener/fund-screener.html) | [Docs](https://vunelix.com/widgets/fund-screener) |
+| **CEX Screener** — Centralized exchange pairs | [Demo](screener/cex-screener.html) | [Docs](https://vunelix.com/widgets/cex-screener) |
+| **DEX Screener** — Decentralized exchange tokens | [Demo](screener/dex-screener.html) | [Docs](https://vunelix.com/widgets/dex-screener) |
+| **DR Screener** — Depositary receipts (ADR/GDR) | [Demo](screener/dr-screener.html) | [Docs](https://vunelix.com/widgets/dr-screener) |
+
+```html
+<vunelix-stock-screener
+    data-default-country="US"
+    data-per-page="50"
+    data-custom-presets='{"Price":["price","change","change-percent","volume"],"Fundamentals":["market-cap-stock","pe-ratio","eps-ttm","dividend-yield-current"]}'
+    data-animation-mode="digits">
+</vunelix-stock-screener>
+<script src="https://vunelix.com/assets/bundles/js/widgets/screener/vunelix-stock-screener.js" type="module"></script>
+```
 
 ---
 
 ## Symbol Format
 
-Symbols use the `EXCHANGE:SYMBOL` format. Here are the supported exchanges and examples:
+Symbols use the `EXCHANGE:SYMBOL` format:
 
 | Exchange | Prefix | Example | Description |
 |----------|--------|---------|-------------|
@@ -226,7 +222,7 @@ Symbols use the `EXCHANGE:SYMBOL` format. Here are the supported exchanges and e
 | Forex | `FX` | `FX:EURUSD` | Currency pairs |
 | ONA | `ONA` | `ONA:AEDUSD` | Exotic forex pairs |
 
-You can mix exchanges in a single widget:
+Mix exchanges in a single widget:
 ```html
 data-symbols="BINANCE:BTCUSDT,NASDAQ:TSLA,FX:EURUSD,NYSE:JPM"
 ```
@@ -340,7 +336,7 @@ data-lang="ja"    <!-- 日本語 -->
 | Chrome Android | 67+ | Fully supported |
 | Safari iOS | 13.4+ | Fully supported |
 
-Widgets use Web Components (Custom Elements v1 + Shadow DOM v1), which are supported in all modern browsers. No polyfills needed.
+Built with Web Components (Custom Elements v1 + Shadow DOM v1), supported in all modern browsers.
 
 ---
 
@@ -354,7 +350,7 @@ Widgets use Web Components (Custom Elements v1 + Shadow DOM v1), which are suppo
 - **Educational platforms** — Teach market analysis with interactive widgets
 - **SaaS dashboards** — Embed market data into your product UI
 - **WordPress sites** — Paste the embed code in any HTML block
-- **Shopify stores** — Add crypto payment tickers to your store
+- **Shopify stores** — Add crypto price tickers to your store
 - **Mobile apps (WebView)** — Works inside any WebView container
 
 ---
@@ -364,6 +360,9 @@ Widgets use Web Components (Custom Elements v1 + Shadow DOM v1), which are suppo
 ```
 free-market-data-widgets/
 ├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── CHANGELOG.md
 ├── assets/
 │   ├── css/
 │   │   └── demo.css
@@ -425,14 +424,14 @@ free-market-data-widgets/
 Found a bug? Have a feature request? Want to improve the demo pages?
 
 - **[Open an issue](../../issues)** — Report bugs or suggest features
-- **[Pull requests](../../pulls)** — Contributions welcome for demo improvements, new examples, and documentation fixes
+- **[Read CONTRIBUTING.md](CONTRIBUTING.md)** — Guidelines for pull requests and contributions
 
 ---
 
 ## License
 
-MIT — free to use in personal and commercial projects.
+MIT — free to use in personal and commercial projects. See [LICENSE](LICENSE).
 
 ---
 
-Built with data from **[Vunelix](https://vunelix.com)** — Free crypto, forex & stock market data for developers.
+Built by **[Vunelix](https://vunelix.com)** — Free crypto, forex & stock market data widgets for developers, traders, and content creators.
